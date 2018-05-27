@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weather News</string>
+    <string name="no_internet_connection">Unfortunately there is no internet connection.</string>
+    <string name="no_news_items_found">No news items found.</string>
+    <string name="no_author">Author not given</string>
+    <string name="written_by">Written by</string>
+</resources>

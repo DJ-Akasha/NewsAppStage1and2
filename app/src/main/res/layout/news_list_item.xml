@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightPrimary"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:layout_marginLeft="@dimen/margin_5dp">
+
+    <TextView
+        android:id="@+id/web_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingTop="@dimen/padding_4dp"
+        android:paddingLeft="@dimen/padding_12dp"
+        android:paddingRight="@dimen/padding_12dp"
+        style="@style/HeadlineText"
+        tools:text="Long placeholder location that should wrap to no more than 2 lines of text" />
+
+    <LinearLayout
+        android:id="@+id/leftside_view"
+        android:layout_below="@+id/web_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_8dp">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_height"
+                tools:src="@mipmap/ic_launcher" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_side_view"
+            android:layout_below="@+id/web_title"
+            android:layout_toRightOf="@id/leftside_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_8dp">
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/margin_5dp"
+                style="@style/AuthorText"
+                tools:text="Joe Blogs" />
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:paddingTop="@dimen/padding_4dp"
+                style="@style/BodyText"
+                tools:text="Long placeholder location that should wrap to more than 2 lines of text" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/leftside_view"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:layout_marginRight="@dimen/margin_8dp"
+            android:layout_marginBottom="@dimen/margin_8dp">
+
+        <TextView
+            android:id="@+id/web_publication_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            style="@style/DateText"
+            tools:text="Feb 2, 2015"/>
+
+        <TextView
+            android:id="@+id/section_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/web_publication_date"
+            android:layout_alignParentLeft="true"
+            style="@style/SectionText"
+            tools:text="music" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
