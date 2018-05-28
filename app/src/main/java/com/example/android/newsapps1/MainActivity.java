@@ -139,6 +139,28 @@ public class MainActivity extends AppCompatActivity implements
         if (news != null && !news.isEmpty()) {
             mAdapter.addAll(news);
         }
+
+        // Get a reference to the ConnectivityManager to check the state of the network
+        // connectivity.
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+
+
+        // Get the details on the currently active default data network.
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        // If there is a network connection, fetch data.
+        if (networkInfo != null && networkInfo.isConnected()) {
+            // Get a reference to the LoaderManager, in order to interact with loaders.
+            LoaderManager loaderManager = getLoaderManager();
+
+            // Initialize the loader.
+            loaderManager.initLoader(NEWS_LOADER_ID, null, this);
+        } else {
+            // Otherwise, display error.
+            // Update empty state with no connection error message.
+            mEmptyStateTextView.setText(R.string.no_internet_connection);
+        }
     }
 
     @Override
