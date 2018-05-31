@@ -196,12 +196,14 @@ public class QueryUtils {
 
                 // Extract the value for the key called "byline" which is the author that wrote
                 // the article.Then add Written by before the name and if there isn't a name
-                // put in the string resource no_author.
+                // put in the string resource no_author
+                if(!currentNewsItem.has("fields")){
+                    continue;
+                }
                 JSONObject fields = currentNewsItem.getJSONObject("fields");
                 String author;
-                if (currentNewsItem.getJSONObject("fields").has("byline")){
-                    author = WRITTEN_BY + " " + currentNewsItem.getJSONObject("fields")
-                            .optString("byline", "");
+                if (fields.has("byline")){
+                    author = WRITTEN_BY + " " + fields.optString("byline", "");
                 } else {
                     author = NO_AUTHOR;
                 }
@@ -212,10 +214,12 @@ public class QueryUtils {
 
                 // Extract the value for the key called "thumbnail"
                 String imageThumbnail;
-                if (currentNewsItem.getJSONObject("fields").has("thumbnail")) {
+                if (fields.has("thumbnail")) {
                     imageThumbnail = fields.optString("thumbnail", "");
                 } else {
-                    imageThumbnail = "";
+                    // If there is no value for thumbnail then by putting null it means that
+                    // Picasso will then be able to create a blank image instead of crashing
+                    imageThumbnail = null;
                 }
 
                 // Create a new {@link News} object with the sectionID, webPublicationDate,

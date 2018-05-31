@@ -19,7 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textAppearance="?android:textAppearanceMedium"/>
+        android:textAppearance="?android:textAppearanceMedium"
+        android:padding="@dimen/margin_8dp"/>
 
     <!-- Progress bar is only visible when we're waiting for the list to populate. -->
     <ProgressBar

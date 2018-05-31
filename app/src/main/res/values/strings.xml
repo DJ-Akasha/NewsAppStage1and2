@@ -1,7 +1,50 @@
 <resources>
-    <string name="app_name">Weather News</string>
+    <string name="app_name">News You Never See</string>
     <string name="no_internet_connection">Unfortunately there is no internet connection.</string>
     <string name="no_news_items_found">No news items found.</string>
     <string name="no_author">Author not given</string>
     <string name="written_by">Written by</string>
+
+    <!-- Strings for the menu -->
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <!-- Strings for the amount of news items -->
+    <string name="settings_max_amount_label">News Items amount</string>
+    <string name="settings_max_amount_key" translatable="false">max_amount</string>
+    <string name="settings_max_amount_default" translatable="false">10</string>
+
+    <!-- Strings For Order-By Preference [CHAR LIMIT=30] -->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_value</string>
+
+    <!-- Label for order-by most recent option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">newest</string>
+
+    <!-- Label for order-by oldest option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_oldest_label">Oldest</string>
+    <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
+
+    <!-- Label for order-by most relevant option [CHAR LIMIT=20] -->
+    <string name="settings_order_by_relevant_label">Most Revelant</string>
+    <string name="settings_order_by_relevant_value" translatable="false">relevance</string>
+
+    <!-- Strings for the date from options -->
+    <string name="settings_date_from_label">Show news items from</string>
+    <string name="settings_date_from_key" translatable="false">from-date</string>
+    <string name="settings_date_from_default" translatable="false">@string/settings_this_week_date_from_value</string>
+
+    <!-- Label for this week option -->
+    <string name="settings_this_week_date_from_label">This week</string>
+    <string name="settings_this_week_date_from_value" translatable="false">this week</string>
+
+    <!-- Label for the last two weeks option -->
+    <string name="settings_last_two_weeks_date_from_label">The last two weeks</string>
+    <string name="settings_last_two_weeks_date_from_value">last two weeks</string>
+
+    <!-- Label for the last 30 days option -->
+    <string name="settings_last_month_date_from_label">The last 30 days</string>
+    <string name="settings_last_month_date_from_value">last 30 days</string>
 </resources>
