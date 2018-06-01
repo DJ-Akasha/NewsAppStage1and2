@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">News You Never See</string>
+    <string name="app_name">Customise your news</string>
     <string name="no_internet_connection">Unfortunately there is no internet connection.</string>
     <string name="no_news_items_found">No news items found.</string>
     <string name="no_author">Author not given</string>
@@ -47,4 +47,9 @@
     <!-- Label for the last 30 days option -->
     <string name="settings_last_month_date_from_label">The last 30 days</string>
     <string name="settings_last_month_date_from_value">last 30 days</string>
+
+    <!-- Strings for the amount of news items -->
+    <string name="settings_customize_feed_label">Choose what news you want to see</string>
+    <string name="settings_customize_feed_key" translatable="false">customize_feed</string>
+    <string name="settings_customize_feed_default" translatable="false">news</string>
 </resources>

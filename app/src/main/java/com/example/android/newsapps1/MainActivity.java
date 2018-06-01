@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements
     /**
      * URL to query the Guardian dataset for news information
      */
-    private static final String GUARDIAN_REQUEST_URL = "https://content.guardianapis.com/search?q=snowsport&show-fields=byline%2Cthumbnail&show-blocks=body&q=weather&api-key=7ecb02f7-9c05-4cbb-846d-f22da708ee4d";
-           // "https://content.guardianapis.com/search?show-fields=byline%2Cthumbnail&show-blocks=body&q=football&api-key=7ecb02f7-9c05-4cbb-846d-f22da708ee4d";
+    private static final String GUARDIAN_REQUEST_URL = "https://content.guardianapis.com/search?q=news&show-fields=byline%2Cthumbnail&show-blocks=body&q=weather&api-key=7ecb02f7-9c05-4cbb-846d-f22da708ee4d";
+
     /**
      * Constant value for the news loader ID.
      */
@@ -129,6 +129,9 @@ public class MainActivity extends AppCompatActivity implements
         String orderBy = sharedPrefs.getString(getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default));
 
+        String customizeFeed = sharedPrefs.getString(getString(R.string.settings_customize_feed_key),
+                getString(R.string.settings_customize_feed_default));
+
         // parse breaks apart the URI string that's passed into this parameter.
         Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
 
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements
 
         // Append query parameter and its value.
         uriBuilder.appendQueryParameter("page-size", maxAmount);
-        uriBuilder.appendQueryParameter("q", "series");
+        uriBuilder.appendQueryParameter("q", customizeFeed);
         uriBuilder.appendQueryParameter("order-by", orderBy);
 
         // Return the completed URI.
