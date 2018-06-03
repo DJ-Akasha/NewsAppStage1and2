@@ -2,7 +2,7 @@ package com.example.android.newsapps1;
 
 /**
  * {@link News} represents a news item. It holds the details of that
- * news item such as section id, the web title, the mDate it was
+ * news item such as section id, the web title, the date it was
  * published, the article url, the author, the bodyTextSummary and the image.
  */
 public class News {

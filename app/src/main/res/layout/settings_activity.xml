@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- The layout used for the preferences fragment -->
 <fragment
+    android:id="@+id/fragment_layout"
     android:name="com.example.android.newsapps1.SettingsActivity$NewsItemPreferenceFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"

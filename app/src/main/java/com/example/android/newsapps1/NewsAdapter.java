@@ -21,6 +21,14 @@ public class NewsAdapter extends ArrayAdapter<News> {
     /** Tag for the log messages */
     private static final String LOG_TAG = QueryUtils.class.getSimpleName();
 
+    /** Initialise the views here to reduce memory. */
+    ImageView thumbnailView;
+    TextView sectionNameView;
+    TextView webTitleView;
+    TextView webPublicationDate;
+    TextView author;
+    TextView body;
+
     /**
      * Constructs a new {@link NewsAdapter}.
      *
@@ -37,8 +45,8 @@ public class NewsAdapter extends ArrayAdapter<News> {
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        /** Check if there is an existing list item view (called convertView) at the given position
-         in the list of news items. */
+        // Check if there is an existing list item view (called convertView) at the given position
+        // in the list of news items.
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.news_list_item,
@@ -48,7 +56,9 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Find the News object at the given position in the list of news items.
         News currentNewsItem = getItem(position);
 
-        ImageView thumbnailView = listItemView.findViewById(R.id.thumbnail);
+        // Find the ImageView with the view ID thumbnail
+        thumbnailView = listItemView.findViewById(R.id.thumbnail);
+
         // Found out about Picasso when looking for ways to display images.
         // Code found at https://stackoverflow.com/questions/5776851/load-image-from-url
         // Author ρяσѕρєя K, date 14 Jan 2016
@@ -56,25 +66,26 @@ public class NewsAdapter extends ArrayAdapter<News> {
                 .load(currentNewsItem.getImageThumbnail())
                 .into(thumbnailView);
 
-        // Find the TextView with the view ID section_id
-        TextView sectionNameView = listItemView.findViewById(R.id.section_name);
+        // Find the TextView with the view ID section_name
+        sectionNameView = listItemView.findViewById(R.id.section_name);
         sectionNameView.setText(currentNewsItem.getSectionName());
 
         // Find the TextView with the view ID web_title
-        TextView webTitleView = listItemView.findViewById(R.id.web_title);
+        webTitleView = listItemView.findViewById(R.id.web_title);
         webTitleView.setText(currentNewsItem.getWebTitle());
 
         // Find the TextView with the view ID web_publication_date
-        TextView webPublicationDate = listItemView.findViewById(R.id.web_publication_date);
+        webPublicationDate = listItemView.findViewById(R.id.web_publication_date);
 
         // Find the TextView with the view ID author
-        TextView author = listItemView.findViewById(R.id.author);
+        author = listItemView.findViewById(R.id.author);
         author.setText(currentNewsItem.getAuthor());
 
         // Find the TextView with the view ID body
-        TextView body = listItemView.findViewById(R.id.body);
+        body = listItemView.findViewById(R.id.body);
         body.setText(currentNewsItem.getBody());
 
+        // Display the date in the format we want.
         // Bits of this code found on the forum.
         // https://discussions.udacity.com/t/display-the-date-in-the-news-app/227647
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat

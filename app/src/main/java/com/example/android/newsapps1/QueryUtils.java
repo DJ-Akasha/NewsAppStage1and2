@@ -144,7 +144,7 @@ public class QueryUtils {
         if (TextUtils.isEmpty(newsJSON)) {
             return null;
         }
-        // Create an empty ArrayList that we can start adding news ites to.
+        // Create an empty ArrayList that we can start adding news items to.
         List<News> news = new ArrayList<>();
 
         // Try to parse the JSON response string. If there's a problem with the way the JSON

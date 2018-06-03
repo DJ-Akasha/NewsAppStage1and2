@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Dimensions used in the app including text -->
 <resources>
     <!-- Text Sizes -->
     <dimen name="text_16sp">16sp</dimen>
@@ -8,6 +9,7 @@
     <!-- Margin sizes -->
     <dimen name="margin_5dp">5dp</dimen>
     <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_50dp">50dp</dimen>
 
     <!-- Padding sizes -->
     <dimen name="padding_4dp">4dp</dimen>

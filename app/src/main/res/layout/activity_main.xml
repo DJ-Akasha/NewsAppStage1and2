@@ -4,6 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- SwipeRefreshLayout allows the user to refresh the ListView -->
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <ListView
         android:id="@+id/list"
         android:orientation="vertical"
@@ -12,6 +18,7 @@
         android:divider="@null"
         android:dividerHeight="0dp">
     </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <!-- Empty view is only visible when the list has no items. -->
     <TextView
@@ -20,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textAppearance="?android:textAppearanceMedium"
-        android:padding="@dimen/margin_8dp"/>
+        android:layout_margin="@dimen/margin_50dp"/>
 
     <!-- Progress bar is only visible when we're waiting for the list to populate. -->
     <ProgressBar
